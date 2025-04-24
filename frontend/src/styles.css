@@ -1,0 +1,40 @@
+:root {
+  --floor-count: 10;
+  --floor-height: 60px; /* now matches containerHeight/floorCount */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+}
+
+/* remove any .building border/padding */
+.building {
+  position: relative;
+  width: 100%;
+  height: calc(var(--floor-count) * var(--floor-height)); /* 600px */
+}
+
+/* Each floor is exactly one band of 60px and draws its own borders */
+.floor {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(--floor-height);
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.8);
+  border-bottom: 1px solid #ddd;
+}
+
+/* top border on the highest floor */
+.floor:first-child {
+  border-top: 1px solid #ddd;
+}
+
+/* other inner styles unchanged */
+.passengers { display: flex; gap: 5px; }
+.floor-select { max-width: 120px; padding: 3px; z-index: 10; }

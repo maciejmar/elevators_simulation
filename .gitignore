@@ -128,6 +128,10 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# Python scipts
+project_struct.py
+selected_files.txt
+
 # yarn v2
 .yarn/cache
 .yarn/unplugged
